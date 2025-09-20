@@ -1,7 +1,7 @@
 -- Script head
 script_name('BotsMenu for RadmirRP') -- название скрипта
-script_authors('QQSliverQQ') -- автор скрипта
-script_description('Боты для радмир рп') -- описание скрипта
+script_author('QQSliverQQ') -- автор скрипта
+script_description('BotsMenu for RadmirRP') -- описание скрипта
 
 require "lib.moonloader"
 require "lib.sampfuncs"
@@ -38,6 +38,11 @@ function main()
 	if not isSampLoaded() or not isSampfuncsLoaded then return end
 	while not isSampAvailable() do wait(100) end
 
+	
+	
+	-- Команды
+	sampRegisterChatCommand("bm", bots_menu)
+	
 	-- Обновление скрипта
 	downloadUrlToFile(update_url, update_path, function(id, status)
 		if status == dlstatus.STATUS_ENDDOWNLOADDATA then
@@ -52,9 +57,6 @@ function main()
 			os.remove(update_path)
 		end
 	end)
-	
-	-- Команды
-	sampRegisterChatCommand("bm", bots_menu)
 
     while true do
         wait(0)
