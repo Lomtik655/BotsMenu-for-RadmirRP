@@ -56,7 +56,6 @@ function main()
 	-- Команды
 	sampRegisterChatCommand("bm", bots_menu)
 
-	imgui.Process = false
     while true do
         wait(0)
 		-- Обновление скрипта
@@ -71,4 +70,9 @@ function main()
 		end
 
     end
+end
+
+function bots_menu()
+	sampAddChatMessage("Обновление", -1)
+
 end
