@@ -28,7 +28,7 @@ local script_vers = 50
 local script_vers_text = "0.50"
 
 local update_url = "https://github.com/Lomtik655/BotsMenu-for-RadmirRP/raw/refs/heads/main/update.ini"
-local update_path = getWorkingDirectory() .. "/radmirSlivsMenu.ini"
+local update_path = getWorkingDirectory() .. "/radmirBotsMenu.ini"
 
 local script_url = "https://github.com/Lomtik655/BotsMenu-for-RadmirRP/raw/refs/heads/main/BotsMenu%20for%20RadmirRP.lua"
 local script_path = thisScript().path
@@ -45,16 +45,13 @@ function main()
 			if tonumber(updateIni.info.vers) > script_vers then
 				sampAddChatMessage("Вышла обнова {00ff00}BotsMenu {00b7ff}RadmirRP {f5a207}by QQSliverQQ! {FFFFFF}Начинаю загрузку...", -1)
 				update_state = true
+			else
+				sampAddChatMessage("{00ff00}BotsMenu {00b7ff}for RadmirRP {f5a207}by QQSliverQQ. {ffffff}Загружен!", -1)
+				sampAddChatMessage("Активация ---> {eefa05}/bm", -1)
 			end
 			os.remove(update_path)
 		end
 	end)
-
-	if not update_state then -- чтобы 100 тыщ раз не выводило при обнове
-		-- Шапка
-		sampAddChatMessage("{00ff00}BotsMenu {00b7ff}for RadmirRP {f5a207}by QQSliverQQ. {ffffff}Загружен!", -1)
-		sampAddChatMessage("Активация ---> {eefa05}/bm", -1)
-	end
 	
 	-- Команды
 	sampRegisterChatCommand("bm", bots_menu)
