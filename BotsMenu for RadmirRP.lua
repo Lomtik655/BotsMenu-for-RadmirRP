@@ -24,8 +24,8 @@ local dlstatus = require('moonloader').download_status
 
 update_state = false
 
-local script_vers = 60
-local script_vers_text = "0.60"
+local script_vers = 65
+local script_vers_text = "0.65"
 
 local update_url = "https://github.com/Lomtik655/BotsMenu-for-RadmirRP/raw/refs/heads/main/update.ini"
 local update_path = getWorkingDirectory() .. "/radmirBotsMenu.ini"
@@ -65,7 +65,7 @@ function main()
 			downloadUrlToFile(script_url, script_path, function(id, status)
 				if status == dlstatus.STATUS_ENDDOWNLOADDATA then
 					sampAddChatMessage("{00ff00}BotsMenu {00b7ff}for RadmirRP {f5a207}by QQSliverQQ {0bff00}успешно обновлен :P", -1)
-					thisScript():reload()
+					--thisScript():reload()
 				end
 			end)
 			break
@@ -75,6 +75,6 @@ function main()
 end
 
 function bots_menu()
-	sampAddChatMessage("Обновление v2", -1)
+	sampAddChatMessage("Обновление v3", -1)
 
 end
